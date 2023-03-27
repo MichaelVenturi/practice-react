@@ -1,0 +1,14 @@
+// small tablets large smartphones
+$sm: 576px;
+// small tablets (portrait)
+$md: 768px;
+// tablets and small desktops
+$lg: 992px;
+// large tablets and small desktops
+$xl: 1200px;
+
+@mixin breakpoint($point) {
+  @media (max-width: $point) {
+    @content;
+  }
+}
