@@ -1,36 +1,25 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
+import BoilerPlate from "./components/BoilerPlate";
+import About from "./pages/About";
+import PageOne from "./pages/PageOne";
+import PageTwo from "./pages/PageTwo";
+import PageThree from "./pages/PageThree";
 //import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="main">
-      <Header />
-      <div className="main-content">
-        <div>
-          <a href="https://vitejs.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://reactjs.org" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
-        </div>
-        <h1>Vite + React</h1>
-        <div className="card">
-          <button onClick={() => setCount(count + 1)}>count is {count}</button>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test HMR (Hot Module
-            Replacement, state does not reset on change)
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
-      </div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<BoilerPlate />} />
+          <Route path="/one" element={<PageOne />} />
+          <Route path="/two" element={<PageTwo />} />
+          <Route path="/three" element={<PageThree />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

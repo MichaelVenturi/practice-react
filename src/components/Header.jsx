@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
 import "./header.scss";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setMenuOpen(!menuOpen);
@@ -14,22 +16,39 @@ const Header = () => {
     <header className="header">
       <div className="header-content">
         {/* instead of process.env like in CRA, use import.meta.env */}
-        <div className="header-content-title">
+        <div
+          className="header-content-title"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <h2>{import.meta.env.VITE_FAKE_VAR}</h2>
         </div>
         <nav className={`header-content-nav ${menuOpen ? "isMenu" : ""}`}>
           <ul>
             <li>
-              <span className="link">page 1</span>
+              <Link to="one" className="link">
+                page 1
+              </Link>
             </li>
             <li>
-              <span className="link">page 2</span>
+              <Link to="two" className="link">
+                page 2
+              </Link>
             </li>
             <li>
-              <span className="link">page 3</span>
+              <Link to="three" className="link">
+                page 3
+              </Link>
             </li>
           </ul>
-          <button>CTA Page</button>
+          <button
+            onClick={() => {
+              navigate("about");
+            }}
+          >
+            About Page
+          </button>
         </nav>
         <div className="header-content-toggle">
           {!menuOpen ? (
