@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "../Button/Button";
 import "./header.scss";
 
 const Header = () => {
@@ -42,13 +43,13 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <button
+          <Button
             onClick={() => {
               navigate("about");
             }}
           >
             About Page
-          </button>
+          </Button>
         </nav>
         <div className="header-content-toggle">
           {!menuOpen ? (

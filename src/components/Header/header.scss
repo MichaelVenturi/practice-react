@@ -1,4 +1,4 @@
-@import "../scss/variables.scss";
+@import "../../scss/variables.scss";
 $primary-color: black;
 $text-color: white;
 $light: #fff;
@@ -104,27 +104,6 @@ $light: #fff;
               background: linear-gradient(rgba($light, 0.1), rgba($light, 0.2));
             }
           }
-        }
-      }
-      button {
-        cursor: pointer;
-        outline: none;
-        padding: 0.75rem 1.25rem;
-        border-radius: 12px;
-        font-size: 1rem;
-        font-family: inherit;
-        background: $light;
-        color: $primary-color;
-        border: 1px solid transparent;
-        transition: 0.3s ease all;
-        &:hover {
-          border-color: blue;
-          color: blue;
-        }
-        &:active {
-          border-color: blue;
-          color: blue;
-          background: linear-gradient(rgba($light, 0.2), rgba($light, 0.3));
         }
       }
 

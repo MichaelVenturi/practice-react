@@ -4,4 +4,4 @@ const PageOne = () => {
   return <div>pageOne</div>;
 };
 
-export default pageOne;
+export default PageOne;

@@ -1,0 +1,21 @@
+.button {
+  cursor: pointer;
+  outline: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  color: black;
+  border: 1px solid transparent;
+  transition: 0.3s ease all;
+  &:hover {
+    border-color: blue;
+    color: blue;
+  }
+  &:active {
+    border-color: blue;
+    color: blue;
+    background: linear-gradient(rgba(#fff, 0.2), rgba(#fff, 0.3));
+  }
+}

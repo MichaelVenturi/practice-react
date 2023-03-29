@@ -1,5 +1,5 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import BoilerPlate from "./components/BoilerPlate";
 import About from "./pages/About";
 import PageOne from "./pages/PageOne";

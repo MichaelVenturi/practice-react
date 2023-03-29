@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
+import Button from "./Button/Button";
 
 const BoilerPlate = () => {
   const [count, setCount] = useState(0);
@@ -16,7 +17,7 @@ const BoilerPlate = () => {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount(count + 1)}>count is {count}</button>
+        <Button onClick={() => setCount(count + 1)}>count is {count}</Button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR (Hot Module
           Replacement, state does not reset on change)
