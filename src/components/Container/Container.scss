@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 768px;
+  &-fluid {
+    margin: 0;
+    max-width: 100%;
+  }
+  .col {
+    flex-basis: 25%;
+  }
+}
