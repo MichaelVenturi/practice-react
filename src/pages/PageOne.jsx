@@ -6,8 +6,11 @@ import Container from "../components/Container/Container";
 const PageOne = () => {
   return (
     <>
-      <Container>
-        <Card>box one</Card>
+      <Container colSize={3}>
+        <Card>
+          <div>yadada</div>
+          <div>thanks</div>
+        </Card>
         <Card>box two</Card>
         <Card>box three</Card>
         <Card>box three</Card>

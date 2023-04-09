@@ -1,6 +1,10 @@
+@import "../../scss/variables.scss";
+$max-cols: 12;
+
 .container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 768px;
@@ -8,6 +12,16 @@
     margin: 0;
     max-width: 100%;
   }
+
+  @for $i from 1 through $max-cols {
+    .col-#{$i} {
+      flex-basis: (100 / ($max-cols / $i)) * 1%;
+      @include breakpoint($md) {
+        flex-basis: 100%;
+      }
+    }
+  }
+
   .col {
     flex-basis: 25%;
   }
