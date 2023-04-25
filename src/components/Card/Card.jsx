@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import "./Card.scss";
 
-const Card = ({ children, task }) => {
+const Card = ({ children, task, deleteTask }) => {
   return (
     <>
       <div className="card">
@@ -13,7 +13,7 @@ const Card = ({ children, task }) => {
         </h3>
         <div>{task.details}</div>
         <div>{task.date}</div>
-        <Button>delete</Button>
+        <Button onClick={() => deleteTask(task.id)}>delete</Button>
       </div>
     </>
   );

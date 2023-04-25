@@ -25,13 +25,12 @@ const PageOne = () => {
   const [toggleAdd, setToggleAdd] = useState(false);
 
   const addTask = (task) => {
-    if (!task.id) {
-      const newId =
-        tasks.reduce((accumulator, t) => {
-          if (accumulator > t.id) return accumulator;
-          return t.id;
-        }, 0) + 1;
-    }
+    const newId =
+      tasks.reduce((accumulator, t) => {
+        if (accumulator > t.id) return accumulator;
+        return t.id;
+      }, 0) + 1;
+
     task.id = newId;
     setTasks([...tasks, task]);
   };
@@ -44,11 +43,11 @@ const PageOne = () => {
         <h3>Task Management</h3>
         <span onClick={() => setToggleAdd(!toggleAdd)}>toggle</span>
       </div>
-      <AddTask display={toggleAdd} />
+      <AddTask display={toggleAdd} addTask={addTask} />
       <Container>
-        {test.map((task, key) => {
+        {tasks.map((task, key) => {
           return (
-            <Card key={key} task={task}>
+            <Card key={key} task={task} deleteTask={deleteTask}>
               test {key + 1}
             </Card>
           );
