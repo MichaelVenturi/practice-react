@@ -1,8 +1,22 @@
 import React from "react";
+import Button from "../Button/Button";
 import "./Card.scss";
 
-const Card = ({ children }) => {
-  return <div className="card">{children}</div>;
+const Card = ({ children, task }) => {
+  return (
+    <>
+      <div className="card">
+        {children}
+        <h3>
+          <span>{task.name}</span>
+          <span>{task.urgent ? "\tx" : "\to"}</span>
+        </h3>
+        <div>{task.details}</div>
+        <div>{task.date}</div>
+        <Button>delete</Button>
+      </div>
+    </>
+  );
 };
 
 export default Card;

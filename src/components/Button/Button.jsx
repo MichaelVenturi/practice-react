@@ -1,9 +1,14 @@
 import React from "react";
 import "./Button.scss";
 
-const Button = ({ onClick, children, disabled }) => {
+const Button = ({ onClick, children, disabled, type }) => {
   return (
-    <button disabled={disabled} className="button" onClick={onClick}>
+    <button
+      type={type}
+      disabled={disabled}
+      className="button"
+      onClick={onClick}
+    >
       {children}
     </button>
   );
@@ -12,6 +17,7 @@ const Button = ({ onClick, children, disabled }) => {
 Button.defaultProps = {
   onClick: () => console.log("pressed"),
   disabled: false,
+  type: "button",
 };
 
 export default Button;
