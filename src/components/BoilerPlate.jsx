@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import Button from "./Button/Button";
 
 import { useSelector, useDispatch } from "react-redux";
-import { Increment, Decrement } from "../redux/actions/counterActions";
+import { increment, decrement } from "../redux/actions/counterActions";
 
 const BoilerPlate = () => {
   const count = useSelector((state) => state.counter);
@@ -12,17 +12,17 @@ const BoilerPlate = () => {
   return (
     <div className="main-content">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://reactjs.org" target="_blank">
+        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <Button onClick={() => dispatch(Increment())}>count is {count}</Button>
-        <Button onClick={() => dispatch(Decrement())}>decrease</Button>
+        <Button onClick={() => dispatch(increment())}>count is {count}</Button>
+        <Button onClick={() => dispatch(decrement())}>decrease</Button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR (Hot Module
           Replacement, state does not reset on change)

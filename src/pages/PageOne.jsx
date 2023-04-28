@@ -4,27 +4,17 @@ import Card from "../components/Card/Card";
 import Container from "../components/Container/Container";
 import AddTask from "../components/AddTask/AddTask";
 
-const test = [
-  {
-    id: 0,
-    name: "taskname",
-    date: "date",
-    details: "taskdetails",
-    urgent: false,
-  },
-  {
-    id: 1,
-    name: "taskname2",
-    date: "date2",
-    details: "taskdetails2",
-    urgent: false,
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { addTask, deleteTask } from "../redux/actions/taskActions";
+
 const PageOne = () => {
-  const [tasks, setTasks] = useState(test);
+  const dispatch = useDispatch();
+  const tasks = useSelector((state) => {
+    return state.tasks;
+  });
   const [toggleAdd, setToggleAdd] = useState(false);
 
-  const addTask = (task) => {
+  const handleAddTask = (task) => {
     const newId =
       tasks.reduce((accumulator, t) => {
         if (accumulator > t.id) return accumulator;
@@ -32,10 +22,11 @@ const PageOne = () => {
       }, 0) + 1;
 
     task.id = newId;
-    setTasks([...tasks, task]);
+    dispatch(addTask(task));
   };
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+  const handleDeleteTask = (id) => {
+    console.log("dispatching");
+    dispatch(deleteTask(id));
   };
   return (
     <>
@@ -43,11 +34,11 @@ const PageOne = () => {
         <h3>Task Management</h3>
         <span onClick={() => setToggleAdd(!toggleAdd)}>toggle</span>
       </div>
-      <AddTask display={toggleAdd} addTask={addTask} />
+      <AddTask display={toggleAdd} addTask={handleAddTask} />
       <Container>
         {tasks.map((task, key) => {
           return (
-            <Card key={key} task={task} deleteTask={deleteTask}>
+            <Card key={key} task={task} deleteTask={handleDeleteTask}>
               test {key + 1}
             </Card>
           );

@@ -1,6 +1,7 @@
 // basic
+const initialState = 0;
 
-export const countReducer = (state = 0, action) => {
+export const countReducer = (state = initialState, action) => {
   switch (action.type) {
     case "INCREMENT":
       return state + 1;

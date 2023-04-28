@@ -13,7 +13,14 @@ const Card = ({ children, task, deleteTask }) => {
         </h3>
         <div>{task.details}</div>
         <div>{task.date}</div>
-        <Button onClick={() => deleteTask(task.id)}>delete</Button>
+        <Button
+          onClick={() => {
+            console.log("delete clicked");
+            deleteTask(task.id);
+          }}
+        >
+          delete
+        </Button>
       </div>
     </>
   );

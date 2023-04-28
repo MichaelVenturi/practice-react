@@ -50,7 +50,7 @@ const AddTask = ({ display, addTask }) => {
       </div>
       <div className="form-control form-control-check">
         <label htmlFor="urgent">Set Urgent</label>
-        <input type="checkbox" name="urgent" id="urgent" value={true} />
+        <input type="checkbox" name="urgent" id="urgent" />
       </div>
       <div className="form-control">
         <Button type="submit">Submit</Button>
