@@ -19,7 +19,7 @@ const BoilerPlate = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>{import.meta.env.VITE_PORT}</h1>
       <div className="card">
         <Button onClick={() => dispatch(increment())}>count is {count}</Button>
         <Button onClick={() => dispatch(decrement())}>decrease</Button>
