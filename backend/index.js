@@ -3,15 +3,19 @@ import cors from "cors";
 import { config } from "dotenv";
 import connectDB from "./db.js";
 
+import taskRoutes from "./routes/tasksRoute.js";
+
 config();
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "ayo" });
-});
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 connectDB();
+
+app.use("/api/tasks", taskRoutes);
 
 const PORT = process.env.PORT || 5000;
 
