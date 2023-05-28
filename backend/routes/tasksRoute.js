@@ -1,11 +1,18 @@
 import express from "express";
-
-import { getAllTasks, createTask } from "../controllers/taskController.js";
+// prettier-ignore
+import {
+  getAllTasks, getTaskById, createTask, deleteTask, updateTask,
+} from "../controllers/taskController.js";
 
 const router = express.Router();
 
 router.get("/", getAllTasks);
+router.get("/:id", getTaskById);
 
 router.post("/", createTask);
+
+router.delete("/:id", deleteTask);
+
+router.patch("/:id", updateTask);
 
 export default router;
